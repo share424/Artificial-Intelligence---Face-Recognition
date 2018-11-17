@@ -18,7 +18,7 @@ you can edit `k` value for incrase the neigbour count.
 
 you also can edit `face_dimen` for face image dimension
 
-and the image count for traing, in this example I use `20` image for training
+You can edit `training_count` for images for training your face
 
 If you have more than one webcam, you can select them by change the param value on `cv2.VideoCapture` function. `0` for your first camera, `1` for your second camera and so on
 
