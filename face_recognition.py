@@ -6,6 +6,7 @@ import os.path
 
 nama = "uknown"
 face_dimen = 200
+training_count = 20
 
 def retrieve_input(textBox, root):
     inputValue = textBox.get("1.0","end-1c")
@@ -74,11 +75,11 @@ while True:
             cv2.rectangle(frame, (x,y), (x+w, y+h), (255, 0, 0), 3)
             
             if (isTrain):
-                if (frame_count % 10 == 0 and len(new_face) < 20):
+                if (frame_count % 10 == 0 and len(new_face) < training_count):
                     new_face = np.concatenate((new_face, [face_component.flatten()]))
                     new_name.append(last_name_idx)
                     print "face added", len(new_face)
-                if(len(new_face) == 20):
+                if(len(new_face) == training_count):
                     nface = np.asarray(new_face)
                     nname = np.asarray(new_name)
                     face_set = np.concatenate((face_set, nface))
@@ -100,7 +101,7 @@ while True:
             print rotation
 
         if(isTrain):
-            percentage = (len(new_face)/20.0)*100.0
+            percentage = (len(new_face)/float(training_count))*100.0
             cv2.putText(frame, ("Training "+str(percentage)+"%"), (5, 25), font, 1, (0, 0, 255), 2)
         else:
             cv2.putText(frame, "Testing", (5, 25), font, 1, (0, 255, 0), 2)
