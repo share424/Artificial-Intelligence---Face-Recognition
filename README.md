@@ -33,4 +33,4 @@ don't forget your computer/laptop must have webcam
 
 Press `t` for training, just wait until it done
 
-Press 'r' to rotate the video
+Press `r` to rotate the video
