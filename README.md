@@ -20,13 +20,14 @@ you also can edit `face_dimen` for face image dimension
 
 and the image count for traing, in this example I use `20` image for training
 
-If you have more than one webcam, you can select them by change the param value on `cv2.VideoCapture` function. 0 for your first camera, 1 for your second camera and so on
+If you have more than one webcam, you can select them by change the param value on `cv2.VideoCapture` function. `0` for your first camera, `1` for your second camera and so on
+
 You can also change the parameter to path of video on your storage
 
 ### How to use?
 open this file from your terminal/cmd by typing
 
-'python face_recognition.py`
+`python face_recognition.py`
 
 don't forget your computer/laptop must have webcam
 
